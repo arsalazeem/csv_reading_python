@@ -2,11 +2,11 @@ import openpyxl
 import json
 import csv
 from csv import reader as rd
-
+#code for reading a xlsx file
 # book = openpyxl.load_workbook('file_1.xlsx')
 # sheet = book.active
 # k=0
-# for i in range(1,1000):
+# for i in range(1,some_range+1):
 #     a1 = sheet.cell(row=i, column=1)
 #     if type(a1.value)==int:
 #         sellerId=sheet.cell(row=i,column=1)
@@ -26,11 +26,7 @@ from csv import reader as rd
 
 count = 0
 master_list = []
-# file = open("activeSellers.csv",encoding='cp1252')
-# reader = csv.reader(file)
-# lines= len(list(reader))
-# print(lines)
-# quit()
+
 with open('second_file.csv', 'r', encoding='cp1252') as file:
     reader = csv.reader(file)
     try:
@@ -80,66 +76,4 @@ jsonString = json.dumps(master_list)
 jsonFile = open("activeSellers.json", "w")
 jsonFile.write(jsonString)
 jsonFile.close()
-# import csv
-# rdr = csv.reader(open("second_file.csv"))
-# line1 = rd().__next__()
-# line2 = rdr.__next__()
-# second_file
-# firstName
-# lastName
-# email
-# dialCode
-# phoneNumber
-# aboutMe
-# sellerType
-# agencyName
-# title
-# streetAddress
-# apartment
-# city
-# state
-# zipCode
-# endofsecondfile
-# sellerId
-# email
-# serviceId
-# serviceName
-# description
-# isFeatured
-# categoryId
-# categoryName
-# packageId
-# packageType
-# pDescription
-# deliveryTimeInDays
-# isSourceFileIncluded
-# price
-# revisions
-# second_file
-# firstName
-# lastName
-# email
-# dialCode
-# phoneNumber
-# aboutMe
-# sellerType
-# agencyName
-# title
-# streetAddress
-# apartment
-# city
-# state
-# zipCode
-# print(count)
-# jsonString = json.dumps(master_list)
-# jsonFile = open("activeSellers.json", "w")
-# jsonFile.write(jsonString)
-# jsonFile.close()
-# f = open("file1.txt", "r")
-# i=0
-# while True:
-#     try:
-#         print(f.read(i))
-#         i = i + 1
-#     except:
-#         break
+
