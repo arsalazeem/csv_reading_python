@@ -4,7 +4,6 @@ import chardet
 import io
 
 
-
 class CSVReader:
     def __init__(self, file_path):
         self.file_path = file_path
@@ -37,7 +36,7 @@ class CSVReader:
     @staticmethod
     def dump_json_data(data, filename):
         with open(f'{filename}.json', 'w') as infile:
-            json.dump(data, infile,indent=4)
+            json.dump(data, infile, indent=4)
 
     def read_data_as_json_string(self):
         self.show_data(self.read_data(), 'json')
@@ -49,8 +48,9 @@ class CSVReader:
         self.dump_json_data(self.read_data(), filename)
 
 
-file_path = "csv_files/Sample-Spreadsheet-100-rows.csv"
-reader = CSVReader(file_path)
-reader.read_data()
-reader.read_data_as_json_string()
-reader.read_csv_data_and_dump_as_json_file(file_path)
+if __name__ == '__main__':
+    file_path = "csv_files/Sample-Spreadsheet-100-rows.csv"
+    reader = CSVReader(file_path)
+    reader.read_data()
+    reader.read_data_as_json_string()
+    reader.read_csv_data_and_dump_as_json_file(file_path)
