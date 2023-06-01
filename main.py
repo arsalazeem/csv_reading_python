@@ -42,7 +42,9 @@ class CSVReader:
         self.show_data(self.read_data(), 'json')
         return json.dumps(self.read_data(), indent=4)
 
-    def read_csv_data_and_dump_as_json_file(self, filename):
+    def read_csv_data_and_dump_as_json_file(self, filename=None):
+        if filename is None:
+            filename = self.file_path.replace('.csv', '')
         if '.json' in filename:
             filename = filename.replace('json', '')
         self.dump_json_data(self.read_data(), filename)
@@ -53,4 +55,4 @@ if __name__ == '__main__':
     reader = CSVReader(file_path)
     reader.read_data()
     reader.read_data_as_json_string()
-    reader.read_csv_data_and_dump_as_json_file(file_path)
+    reader.read_csv_data_and_dump_as_json_file()
